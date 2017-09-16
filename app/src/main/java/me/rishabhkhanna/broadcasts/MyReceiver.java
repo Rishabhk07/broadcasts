@@ -11,6 +11,9 @@ public class MyReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         if(intent.getAction().equals(Intent.ACTION_POWER_CONNECTED)){
+            Intent i = new Intent(context,MainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(i);
             Toast.makeText(context, "Power Connected", Toast.LENGTH_SHORT).show();
         }
         if(intent.getAction().equals(Intent.ACTION_POWER_DISCONNECTED)){
