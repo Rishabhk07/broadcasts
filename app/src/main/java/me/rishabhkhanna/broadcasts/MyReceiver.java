@@ -19,5 +19,9 @@ public class MyReceiver extends BroadcastReceiver {
         if(intent.getAction().equals(Intent.ACTION_POWER_DISCONNECTED)){
             Toast.makeText(context, "Power Disconnected", Toast.LENGTH_SHORT).show();
         }
+
+        if(intent.getAction().equals("some.Intent.Action")){
+            Log.d(TAG, "onReceive: Custom Broadcast Received !! ");
+        }
     }
 }
